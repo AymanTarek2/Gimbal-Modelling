@@ -1,0 +1,148 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, margin=0.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{breqn}
+\title{Symbolic DH Transformation Matrices \& Kinematics}
+\author{Computed by SymPy}
+\date{}
+\begin{document}
+\maketitle
+\noindent\textbf{Link lengths:} $L_1 = 13.548\ \text{cm},\; L_2 = 9.637\ \text{cm}$
+\section*{Matrix $T_{0 \to 1}$}
+\vspace{0.5cm}
+$$\left[\begin{matrix}\cos{\left(q_{1} \right)} & - \left(- \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4}\right) \sin{\left(q_{1} \right)} & \left(\frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4}\right) \sin{\left(q_{1} \right)} & 0\\\sin{\left(q_{1} \right)} & \left(- \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4}\right) \cos{\left(q_{1} \right)} & - \left(\frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4}\right) \cos{\left(q_{1} \right)} & 0\\0 & \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4} & - \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4} & L_{1}\\0 & 0 & 0 & 1\end{matrix}\right]$$
+
+\section*{Matrix $T_{1 \to 2}$}
+\vspace{0.5cm}
+$$\left[\begin{matrix}\cos{\left(q_{2} \right)} & - \left(- \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4}\right) \sin{\left(q_{2} \right)} & \left(- \frac{\sqrt{6}}{4} - \frac{\sqrt{2}}{4}\right) \sin{\left(q_{2} \right)} & 0\\\sin{\left(q_{2} \right)} & \left(- \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4}\right) \cos{\left(q_{2} \right)} & - \left(- \frac{\sqrt{6}}{4} - \frac{\sqrt{2}}{4}\right) \cos{\left(q_{2} \right)} & 0\\0 & - \frac{\sqrt{6}}{4} - \frac{\sqrt{2}}{4} & - \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4} & L_{2}\\0 & 0 & 0 & 1\end{matrix}\right]$$
+
+\section*{Matrix $T_{0 \to 2}$ (Computed)}
+\vspace{0.5cm}
+\noindent\resizebox{\textwidth}{!}{$
+\left[\begin{matrix}\frac{\left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} + \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} & - \frac{\left(- \sqrt{6} + \sqrt{2}\right)^{2} \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{16} - \frac{\left(\sqrt{2} + \sqrt{6}\right)^{2} \sin{\left(q_{1} \right)}}{16} + \frac{\left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4} & - \frac{\sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{4} + \frac{\sin{\left(q_{1} \right)}}{4} - \frac{\sqrt{6} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4} & \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \sin{\left(q_{1} \right)}}{4}\\\sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \frac{\left(- \sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4} & \frac{\left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} + \frac{\left(- \sqrt{6} + \sqrt{2}\right)^{2} \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{16} + \frac{\left(\sqrt{2} + \sqrt{6}\right)^{2} \cos{\left(q_{1} \right)}}{16} & - \frac{\sqrt{6} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} + \frac{\cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{4} - \frac{\cos{\left(q_{1} \right)}}{4} & - \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \cos{\left(q_{1} \right)}}{4}\\\frac{\left(\sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)}}{4} & \frac{\cos{\left(q_{2} \right)}}{4} - \frac{1}{4} & \frac{\sqrt{3} \cos{\left(q_{2} \right)}}{4} + \frac{\cos{\left(q_{2} \right)}}{2} - \frac{\sqrt{3}}{4} + \frac{1}{2} & L_{1} - \frac{L_{2} \left(- \sqrt{6} + \sqrt{2}\right)}{4}\\0 & 0 & 0 & 1\end{matrix}\right]$}
+
+\section*{Matrix $T_{2 \to 3}$}
+\vspace{0.5cm}
+$$\left[\begin{matrix}\cos{\left(q_{3} \right)} & - \sin{\left(q_{3} \right)} & 0 & 0\\\sin{\left(q_{3} \right)} & \cos{\left(q_{3} \right)} & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & 1\end{matrix}\right]$$
+
+\section*{Final Matrix $T_{0 \to 3}$ (Simplified)}
+\vspace{0.5cm}
+\noindent\resizebox{\textwidth}{!}{$
+\left[\begin{matrix}\frac{\left(\left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + 4 \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}\right) \cos{\left(q_{3} \right)}}{4} - \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right)^{2} \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \sin{\left(q_{1} \right)} + 4 \left(- \sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{16} & - \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + 4 \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}\right) \sin{\left(q_{3} \right)}}{4} - \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right)^{2} \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \sin{\left(q_{1} \right)} - 4 \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \cos{\left(q_{3} \right)}}{16} & - \frac{\sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{4} + \frac{\sin{\left(q_{1} \right)}}{4} - \frac{\sqrt{6} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4} & \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \sin{\left(q_{1} \right)}}{4}\\\frac{\left(4 \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(- \sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \cos{\left(q_{3} \right)}}{4} + \frac{\left(4 \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + \left(- \sqrt{6} + \sqrt{2}\right)^{2} \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{16} & - \frac{\left(4 \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} - \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{4} + \frac{\left(4 \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + \left(- \sqrt{6} + \sqrt{2}\right)^{2} \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \cos{\left(q_{1} \right)}\right) \cos{\left(q_{3} \right)}}{16} & - \frac{\sqrt{6} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} + \frac{\cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{4} - \frac{\cos{\left(q_{1} \right)}}{4} & - \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \cos{\left(q_{1} \right)}}{4}\\\frac{\sqrt{2} \sin{\left(q_{2} \right)} \cos{\left(q_{3} \right)}}{4} + \frac{\sqrt{6} \sin{\left(q_{2} \right)} \cos{\left(q_{3} \right)}}{4} + \frac{\sin{\left(q_{3} \right)} \cos{\left(q_{2} \right)}}{4} - \frac{\sin{\left(q_{3} \right)}}{4} & - \frac{\sqrt{6} \sin{\left(q_{2} \right)} \sin{\left(q_{3} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{2} \right)} \sin{\left(q_{3} \right)}}{4} + \frac{\cos{\left(q_{2} \right)} \cos{\left(q_{3} \right)}}{4} - \frac{\cos{\left(q_{3} \right)}}{4} & \frac{\sqrt{3} \cos{\left(q_{2} \right)}}{4} + \frac{\cos{\left(q_{2} \right)}}{2} - \frac{\sqrt{3}}{4} + \frac{1}{2} & L_{1} - \frac{L_{2} \left(- \sqrt{6} + \sqrt{2}\right)}{4}\\0 & 0 & 0 & 1\end{matrix}\right]$}
+
+\vspace{1cm}
+
+\subsection*{Individual Matrix Terms ($a_{11}$ to $a_{44}$)}
+These are the individual elements of the $T_{0 \to 3}$ matrix above.
+\vspace{0.5cm}
+\begin{dmath*}
+a_{11} = \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + 4 \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}\right) \cos{\left(q_{3} \right)}}{4} - \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right)^{2} \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \sin{\left(q_{1} \right)} + 4 \left(- \sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{16}\end{dmath*}
+\begin{dmath*}
+a_{12} = - \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + 4 \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}\right) \sin{\left(q_{3} \right)}}{4} - \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right)^{2} \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \sin{\left(q_{1} \right)} - 4 \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \cos{\left(q_{3} \right)}}{16}\end{dmath*}
+\begin{dmath*}
+a_{13} = - \frac{\sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{4} + \frac{\sin{\left(q_{1} \right)}}{4} - \frac{\sqrt{6} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4}\end{dmath*}
+\begin{dmath*}
+a_{14} = \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \sin{\left(q_{1} \right)}}{4}\end{dmath*}
+\begin{dmath*}
+a_{21} = \frac{\left(4 \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(- \sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \cos{\left(q_{3} \right)}}{4} + \frac{\left(4 \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + \left(- \sqrt{6} + \sqrt{2}\right)^{2} \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{16}\end{dmath*}
+\begin{dmath*}
+a_{22} = - \frac{\left(4 \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} - \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{4} + \frac{\left(4 \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + \left(- \sqrt{6} + \sqrt{2}\right)^{2} \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \cos{\left(q_{1} \right)}\right) \cos{\left(q_{3} \right)}}{16}\end{dmath*}
+\begin{dmath*}
+a_{23} = - \frac{\sqrt{6} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} + \frac{\cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{4} - \frac{\cos{\left(q_{1} \right)}}{4}\end{dmath*}
+\begin{dmath*}
+a_{24} = - \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \cos{\left(q_{1} \right)}}{4}\end{dmath*}
+\begin{dmath*}
+a_{31} = \frac{\sqrt{2} \sin{\left(q_{2} \right)} \cos{\left(q_{3} \right)}}{4} + \frac{\sqrt{6} \sin{\left(q_{2} \right)} \cos{\left(q_{3} \right)}}{4} + \frac{\sin{\left(q_{3} \right)} \cos{\left(q_{2} \right)}}{4} - \frac{\sin{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*}
+a_{32} = - \frac{\sqrt{6} \sin{\left(q_{2} \right)} \sin{\left(q_{3} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{2} \right)} \sin{\left(q_{3} \right)}}{4} + \frac{\cos{\left(q_{2} \right)} \cos{\left(q_{3} \right)}}{4} - \frac{\cos{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*}
+a_{33} = \frac{\sqrt{3} \cos{\left(q_{2} \right)}}{4} + \frac{\cos{\left(q_{2} \right)}}{2} - \frac{\sqrt{3}}{4} + \frac{1}{2}\end{dmath*}
+\begin{dmath*}
+a_{34} = L_{1} - \frac{L_{2} \left(- \sqrt{6} + \sqrt{2}\right)}{4}\end{dmath*}
+\begin{dmath*}
+a_{41} = 0\end{dmath*}
+\begin{dmath*}
+a_{42} = 0\end{dmath*}
+\begin{dmath*}
+a_{43} = 0\end{dmath*}
+\begin{dmath*}
+a_{44} = 1\end{dmath*}
+\hrule
+
+\section*{Forward Kinematics: 6-DOF Equations}
+\subsection*{Position ($x, y, z$)}
+\vspace{0.5cm}
+$$ x = \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \sin{\left(q_{1} \right)}}{4} $$
+$$ y = - \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \cos{\left(q_{1} \right)}}{4} $$
+$$ z = L_{1} - \frac{L_{2} \left(- \sqrt{6} + \sqrt{2}\right)}{4} $$
+\subsection*{Orientation ($\theta_x, \theta_y, \theta_z$)}
+\textit{Note: Calculated using Z-Y-X (Yaw-Pitch-Roll) convention.}
+
+\vspace{1cm}
+$$ \theta_z \text{ (Yaw)} = \operatorname{atan2}(A_z + B_z, C_z + D_z) \quad \text{where:}$$
+\begin{dmath*} A_z = \frac{\left(4 \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(- \sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \cos{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*} B_z = \frac{\left(4 \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + \left(- \sqrt{6} + \sqrt{2}\right)^{2} \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{16}\end{dmath*}
+\begin{dmath*} C_z = - \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right)^{2} \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \sin{\left(q_{1} \right)} + 4 \left(- \sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{16}\end{dmath*}
+\begin{dmath*} D_z = \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + 4 \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}\right) \cos{\left(q_{3} \right)}}{4}\end{dmath*}
+
+\vspace{1cm}
+$$ \theta_y \text{ (Pitch)} = \operatorname{atan2}(A_y + B_y + C_y + D_y, \sqrt{E_y^2 + F_y^2}) \quad \text{where:}$$
+\begin{dmath*} A_y = \frac{\sin{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*} B_y = - \frac{\sin{\left(q_{3} \right)} \cos{\left(q_{2} \right)}}{4}\end{dmath*}
+\begin{dmath*} C_y = - \frac{\sqrt{2} \sin{\left(q_{2} \right)} \cos{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*} D_y = - \frac{\sqrt{6} \sin{\left(q_{2} \right)} \cos{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*} E_y = \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + 4 \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}\right) \cos{\left(q_{3} \right)}}{4} - \frac{\left(\left(- \sqrt{6} + \sqrt{2}\right)^{2} \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \sin{\left(q_{1} \right)} + 4 \left(- \sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{16}\end{dmath*}
+\begin{dmath*} F_y = \frac{\left(4 \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(- \sqrt{2} + \sqrt{6}\right) \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \cos{\left(q_{3} \right)}}{4} + \frac{\left(4 \left(- \sqrt{6} + \sqrt{2}\right) \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + \left(- \sqrt{6} + \sqrt{2}\right)^{2} \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \left(\sqrt{2} + \sqrt{6}\right)^{2} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{3} \right)}}{16}\end{dmath*}
+
+\vspace{1cm}
+$$ \theta_x \text{ (Roll)} = \operatorname{atan2}(A_x + B_x + C_x + D_x, E_x + F_x + G_x + H_x) \quad \text{where:}$$
+\begin{dmath*} A_x = - \frac{\cos{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*} B_x = \frac{\cos{\left(q_{2} \right)} \cos{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*} C_x = - \frac{\sqrt{2} \sin{\left(q_{2} \right)} \sin{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*} D_x = - \frac{\sqrt{6} \sin{\left(q_{2} \right)} \sin{\left(q_{3} \right)}}{4}\end{dmath*}
+\begin{dmath*} E_x = \frac{1}{2}\end{dmath*}
+\begin{dmath*} F_x = \frac{\cos{\left(q_{2} \right)}}{2}\end{dmath*}
+\begin{dmath*} G_x = - \frac{\sqrt{3}}{4}\end{dmath*}
+\begin{dmath*} H_x = \frac{\sqrt{3} \cos{\left(q_{2} \right)}}{4}\end{dmath*}
+
+\hrule
+
+\section*{Velocity Kinematics}
+\subsection*{Link Origins (${^0O_i}$)}
+Coordinate vectors of the origins relative to the Base Frame $\{0\}$:
+\vspace{0.5cm}
+\begin{dmath*} {^0O_1} = \left[\begin{matrix}0\\0\\L_{1}\end{matrix}\right]\end{dmath*}
+\begin{dmath*} {^0O_2} = \left[\begin{matrix}\frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \sin{\left(q_{1} \right)}}{4}\\- \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \cos{\left(q_{1} \right)}}{4}\\L_{1} - \frac{L_{2} \left(- \sqrt{6} + \sqrt{2}\right)}{4}\end{matrix}\right]\end{dmath*}
+\begin{dmath*} {^0O_3} (\text{End Effector}) = \left[\begin{matrix}\frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \sin{\left(q_{1} \right)}}{4}\\- \frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \cos{\left(q_{1} \right)}}{4}\\L_{1} - \frac{L_{2} \left(- \sqrt{6} + \sqrt{2}\right)}{4}\end{matrix}\right]\end{dmath*}
+\subsection*{Jacobian Matrix ($J$)}
+\vspace{0.5cm}
+\noindent\resizebox{\textwidth}{!}{$
+J = \left[\begin{matrix}\frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \cos{\left(q_{1} \right)}}{4} & 0 & 0\\\frac{L_{2} \left(\sqrt{2} + \sqrt{6}\right) \sin{\left(q_{1} \right)}}{4} & 0 & 0\\0 & 0 & 0\\0 & \frac{\left(\sqrt{2} + \sqrt{6}\right) \sin{\left(q_{1} \right)}}{4} & - \frac{\sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{4} + \frac{\sin{\left(q_{1} \right)}}{4} - \frac{\sqrt{6} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}}{4}\\0 & - \frac{\left(\sqrt{2} + \sqrt{6}\right) \cos{\left(q_{1} \right)}}{4} & - \frac{\sqrt{6} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} - \frac{\sqrt{2} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)}}{4} + \frac{\cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{4} - \frac{\cos{\left(q_{1} \right)}}{4}\\1 & - \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4} & \frac{\sqrt{3} \cos{\left(q_{2} \right)}}{4} + \frac{\cos{\left(q_{2} \right)}}{2} - \frac{\sqrt{3}}{4} + \frac{1}{2}\end{matrix}\right]$}
+
+\hrule
+
+\section*{Inverse Orientation Kinematics}
+For this 3-DOF gimbal, the actuators $q_1, q_2, q_3$ directly control the orientation ($\theta_x, \theta_y, \theta_z$) of the end effector. The position ($x, y, z$) is a dependent variable fixed to a spherical surface.
+Therefore, Inverse Kinematics is defined as solving the non-linear orientation system:
+\vspace{0.5cm}
+\noindent\textbf{System to solve for} $q_1, q_2, q_3$:
+\begin{dmath*} \theta_{z\_calc}(q_1, q_2, q_3) = \theta_{z\_desired}\end{dmath*}
+\begin{dmath*} \theta_{y\_calc}(q_1, q_2, q_3) = \theta_{y\_desired}\end{dmath*}
+\begin{dmath*} \theta_{x\_calc}(q_1, q_2, q_3) = \theta_{x\_desired}\end{dmath*}
+
+\vspace{0.2cm}
+\noindent\textit{Note: Due to the complexity of the Forward Kinematics terms (specifically the atan2 arguments derived from $75^\circ$ twist angles), an analytic closed-form solution is intractable. This system should be solved numerically (e.g., Newton-Raphson) using the Jacobian $J$ defined previously.}
+
+\hrule
+
+\section*{Inverse Velocity Kinematics (Pseudoinverse)}
+$$ J^{+} = (J^\top J)^{-1} J^\top $$
+
+\noindent\resizebox{\textwidth}{!}{$
+\begin{bmatrix} \dot{q}_1 \\ \dot{q}_2 \\ \dot{q}_3 \end{bmatrix} = \left[\begin{matrix}\frac{L_{2} \left(5 \sqrt{2} + 3 \sqrt{6}\right) \cos{\left(q_{1} \right)}}{4 \sqrt{3} L_{2}^{2} + 7 L_{2}^{2} + 4 \sqrt{3} \sin^{2}{\left(q_{2} \right)} + 7 \sin^{2}{\left(q_{2} \right)}} & \frac{L_{2} \left(5 \sqrt{2} + 3 \sqrt{6}\right) \sin{\left(q_{1} \right)}}{4 \sqrt{3} L_{2}^{2} + 7 L_{2}^{2} + 4 \sqrt{3} \sin^{2}{\left(q_{2} \right)} + 7 \sin^{2}{\left(q_{2} \right)}} & 0 & \frac{\left(- 2 \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} - \sqrt{3} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + 5 \sqrt{2} \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + 3 \sqrt{6} \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}\right) \sin{\left(q_{2} \right)}}{4 \sqrt{3} L_{2}^{2} + 7 L_{2}^{2} + 4 \sqrt{3} \sin^{2}{\left(q_{2} \right)} + 7 \sin^{2}{\left(q_{2} \right)}} & \frac{\left(5 \sqrt{2} \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + 3 \sqrt{6} \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \sqrt{3} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)} + 2 \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \sin{\left(q_{2} \right)}}{4 \sqrt{3} L_{2}^{2} + 7 L_{2}^{2} + 4 \sqrt{3} \sin^{2}{\left(q_{2} \right)} + 7 \sin^{2}{\left(q_{2} \right)}} & \frac{\sin^{2}{\left(q_{2} \right)}}{L_{2}^{2} + \sin^{2}{\left(q_{2} \right)}}\\\frac{L_{2} \left(5 \cos{\left(q_{2} \right)} + 3 \sqrt{3} \cos{\left(q_{2} \right)} - 3 \sqrt{3} - 5\right) \cos{\left(q_{1} \right)}}{19 L_{2}^{2} + 11 \sqrt{3} L_{2}^{2} + 19 \sin^{2}{\left(q_{2} \right)} + 11 \sqrt{3} \sin^{2}{\left(q_{2} \right)}} & \frac{L_{2} \left(5 \cos{\left(q_{2} \right)} + 3 \sqrt{3} \cos{\left(q_{2} \right)} - 3 \sqrt{3} - 5\right) \sin{\left(q_{1} \right)}}{19 L_{2}^{2} + 11 \sqrt{3} L_{2}^{2} + 19 \sin^{2}{\left(q_{2} \right)} + 11 \sqrt{3} \sin^{2}{\left(q_{2} \right)}} & 0 & \frac{2 \left(\sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} - \sin{\left(q_{1} \right)} + \sqrt{2} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)} + \sqrt{6} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right) \left(\sqrt{6} L_{2}^{2} + 2 \sqrt{2} L_{2}^{2} - 2 \sqrt{2} \cos{\left(q_{2} \right)} - \sqrt{6} \cos{\left(q_{2} \right)} + \sqrt{6} + 2 \sqrt{2}\right) - \left(\sqrt{2} + \sqrt{6}\right) \left(- 12 \sqrt{3} L_{2}^{2} - 20 L_{2}^{2} + 19 \cos^{2}{\left(q_{2} \right)} + 11 \sqrt{3} \cos^{2}{\left(q_{2} \right)} + 2 \cos{\left(q_{2} \right)} + 2 \sqrt{3} \cos{\left(q_{2} \right)} - 13 \sqrt{3} - 21\right) \sin{\left(q_{1} \right)}}{4 \left(19 L_{2}^{2} + 11 \sqrt{3} L_{2}^{2} + 19 \sin^{2}{\left(q_{2} \right)} + 11 \sqrt{3} \sin^{2}{\left(q_{2} \right)}\right)} & \frac{2 \left(\sqrt{2} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + \sqrt{6} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} - \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \cos{\left(q_{1} \right)}\right) \left(\sqrt{6} L_{2}^{2} + 2 \sqrt{2} L_{2}^{2} - 2 \sqrt{2} \cos{\left(q_{2} \right)} - \sqrt{6} \cos{\left(q_{2} \right)} + \sqrt{6} + 2 \sqrt{2}\right) + \left(\sqrt{2} + \sqrt{6}\right) \left(- 12 \sqrt{3} L_{2}^{2} - 20 L_{2}^{2} + 19 \cos^{2}{\left(q_{2} \right)} + 11 \sqrt{3} \cos^{2}{\left(q_{2} \right)} + 2 \cos{\left(q_{2} \right)} + 2 \sqrt{3} \cos{\left(q_{2} \right)} - 13 \sqrt{3} - 21\right) \cos{\left(q_{1} \right)}}{4 \left(19 L_{2}^{2} + 11 \sqrt{3} L_{2}^{2} + 19 \sin^{2}{\left(q_{2} \right)} + 11 \sqrt{3} \sin^{2}{\left(q_{2} \right)}\right)} & \frac{L_{2}^{2} \left(- 7 \sqrt{2} \cos{\left(q_{2} \right)} - 4 \sqrt{6} \cos{\left(q_{2} \right)} + 4 \sqrt{6} + 7 \sqrt{2}\right)}{2 \left(19 L_{2}^{2} + 11 \sqrt{3} L_{2}^{2} + 19 \sin^{2}{\left(q_{2} \right)} + 11 \sqrt{3} \sin^{2}{\left(q_{2} \right)}\right)}\\- \frac{2 L_{2} \left(\sqrt{6} + 2 \sqrt{2}\right) \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{5 L_{2}^{2} + 3 \sqrt{3} L_{2}^{2} + 5 \sin^{2}{\left(q_{2} \right)} + 3 \sqrt{3} \sin^{2}{\left(q_{2} \right)}} & - \frac{2 L_{2} \left(\sqrt{6} + 2 \sqrt{2}\right) \sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)}}{5 L_{2}^{2} + 3 \sqrt{3} L_{2}^{2} + 5 \sin^{2}{\left(q_{2} \right)} + 3 \sqrt{3} \sin^{2}{\left(q_{2} \right)}} & 0 & - \frac{\sqrt{2} \left(\sqrt{2} + \sqrt{6}\right) \left(L_{2}^{2} - \cos{\left(q_{2} \right)} + 1\right) \sin{\left(q_{1} \right)} + 2 \left(L_{2}^{2} + \sqrt{3} L_{2}^{2} + 1 + \sqrt{3}\right) \left(\sin{\left(q_{1} \right)} \cos{\left(q_{2} \right)} - \sin{\left(q_{1} \right)} + \sqrt{2} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)} + \sqrt{6} \sin{\left(q_{2} \right)} \cos{\left(q_{1} \right)}\right)}{10 L_{2}^{2} + 6 \sqrt{3} L_{2}^{2} + 10 \sin^{2}{\left(q_{2} \right)} + 6 \sqrt{3} \sin^{2}{\left(q_{2} \right)}} & \frac{\sqrt{2} \left(\sqrt{2} + \sqrt{6}\right) \left(L_{2}^{2} - \cos{\left(q_{2} \right)} + 1\right) \cos{\left(q_{1} \right)} - 2 \left(L_{2}^{2} + \sqrt{3} L_{2}^{2} + 1 + \sqrt{3}\right) \left(\sqrt{2} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} + \sqrt{6} \sin{\left(q_{1} \right)} \sin{\left(q_{2} \right)} - \cos{\left(q_{1} \right)} \cos{\left(q_{2} \right)} + \cos{\left(q_{1} \right)}\right)}{2 \left(5 L_{2}^{2} + 3 \sqrt{3} L_{2}^{2} + 5 \sin^{2}{\left(q_{2} \right)} + 3 \sqrt{3} \sin^{2}{\left(q_{2} \right)}\right)} & \frac{L_{2}^{2} \cos{\left(q_{2} \right)}}{L_{2}^{2} + \sin^{2}{\left(q_{2} \right)}}\end{matrix}\right] \cdot \begin{bmatrix} \dot{x} \\ \dot{y} \\ \dot{z} \\ \omega_x \\ \omega_y \\ \omega_z \end{bmatrix}
+$}
+
+\end{document}

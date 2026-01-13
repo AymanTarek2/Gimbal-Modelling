@@ -1,0 +1,53 @@
+#include <math.h>
+#include "../params.h"
+void calculate_M_7_8(const double q[9], const double dq[9], double *val) {
+  double q_0 = q[0]; double dq_0 = dq[0];
+  double q_1 = q[1]; double dq_1 = dq[1];
+  double q_2 = q[2]; double dq_2 = dq[2];
+  double q_3 = q[3]; double dq_3 = dq[3];
+  double q_4 = q[4]; double dq_4 = dq[4];
+  double q_5 = q[5]; double dq_5 = dq[5];
+  double q_6 = q[6]; double dq_6 = dq[6];
+  double q_7 = q[7]; double dq_7 = dq[7];
+  double q_8 = q[8]; double dq_8 = dq[8];
+  double x0 = sin(q_3);
+  double x1 = cos(q_3);
+  double x2 = cos(q_4);
+  double x3 = cos(q_5);
+  double x4 = x0*x3;
+  double x5 = sin(q_4);
+  double x6 = sin(q_5);
+  double x7 = x1*x6;
+  double x8 = x5*x7;
+  double x9 = x1*x3;
+  double x10 = x0*x6;
+  double x11 = x10*x5;
+  double x12 = (x11 - x9)*(x4 + x8);
+  double x13 = x4*x5 + x7;
+  double x14 = x10 - x5*x9;
+  double x15 = cos(q_0);
+  double x16 = x15*x2;
+  double x17 = x1*x16;
+  double x18 = sin(q_0);
+  double x19 = x14*x18;
+  double x20 = x0*x16;
+  double x21 = x13*x18;
+  double x22 = x18*x2;
+  double x23 = x0*x22 + x13*x15;
+  double x24 = -x1*x22 + x14*x15;
+  double x25 = sin(q_1);
+  double x26 = x23*x25;
+  double x27 = cos(q_1);
+  double x28 = -0.96606771244047496*x11 - 0.2582889370066549*x20 + 0.2582889370066549*x21 + 0.96606771244047496*x9;
+  double x29 = x27*x28;
+  double x30 = x24*x25;
+  double x31 = 0.2582889370066549*x17 + 0.2582889370066549*x19 + 0.96606771244047496*x4 + 0.96606771244047496*x8;
+  double x32 = x27*x31;
+  double x33 = x23*x27 - x25*x28;
+  double x34 = x24*x27 - x25*x31;
+  double x35 = sin(q_2);
+  double x36 = cos(q_2);
+  double x37 = 0.24952460252270103*x11 - 0.93328682501997218*x20 + 0.93328682501997218*x21 + 0.2582889370066549*x26 + 0.2582889370066549*x29 - 0.24952460252270103*x9;
+  double x38 = 0.93328682501997218*x17 + 0.93328682501997218*x19 + 0.2582889370066549*x30 + 0.2582889370066549*x32 - 0.24952460252270103*x4 - 0.24952460252270103*x8;
+  *val = -m_base_link*(x0*x1*pow(x2, 2) + x12 - x13*x14) + (1.0/2.0)*m_end_effector*(2*(x33*x35 + x36*x37)*(x34*x35 + x36*x38) + 2*(x33*x36 - x35*x37)*(x34*x36 - x35*x38) + (-0.13342634996005548*x11 + 0.49904920504540207*x20 - 0.49904920504540207*x21 + 1.9321354248809499*x26 + 1.9321354248809499*x29 + 0.13342634996005548*x9)*(-0.24952460252270103*x17 - 0.24952460252270103*x19 + 0.96606771244047496*x30 + 0.96606771244047496*x32 + 0.06671317498002774*x4 + 0.06671317498002774*x8)) + m_link_2*(-x12 + x23*x24 + (x17 + x19)*(-x20 + x21)) + (1.0/2.0)*m_link_3*(2*x33*x34 + 2*(x26 + x29)*(x30 + x32) + (0.51657787401330979*x11 - 1.9321354248809499*x20 + 1.9321354248809499*x21 - 0.51657787401330979*x9)*(0.96606771244047496*x17 + 0.96606771244047496*x19 - 0.2582889370066549*x4 - 0.2582889370066549*x8));
+}
