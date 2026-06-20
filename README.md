@@ -20,9 +20,13 @@ https://github.com/user-attachments/assets/064867ab-5779-4ba0-b793-b17383601b43
 
 ## Hardware
 
-<p align="center">
-  <img src="docs/media/hardware_gimbal.png" width="550" alt="The physical 3-axis brushless gimbal, 3D-printed and assembled, showing the canted roll/pitch/yaw ring structure with BLDC gimbal motors.">
-</p>
+
+
+<img width="1280" height="890" alt="gimbal" src="https://github.com/user-attachments/assets/c5d95ed4-f445-4a3d-9534-7a8296ecc399" />
+
+
+
+
 
 The physical build: a 3D-printed frame carrying three brushless gimbal motors in a cascaded ring arrangement (yaw → pitch → roll), with the pitch axis canted 15° off-orthogonal relative to the roll axis — the geometric feature that makes this system's kinematics and dynamics meaningfully harder than a standard orthogonal 3-axis gimbal.
 
