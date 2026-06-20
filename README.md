@@ -1,7 +1,6 @@
 
-gimbal video when working:
+
+https://github.com/user-attachments/assets/d44dbbb3-fb33-4ffd-bdf5-0e92a6f0337f
 
 
-
-https://github.com/user-attachments/assets/8ca36734-b543-4400-a611-5ed0fb9a93bf
 
